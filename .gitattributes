@@ -1,2 +1,3 @@
 课本/大一下/电路.pdf filter=lfs diff=lfs merge=lfs -text
 课本/大二上/电路.pdf filter=lfs diff=lfs merge=lfs -text
+电路/电路.pdf filter=lfs diff=lfs merge=lfs -text
