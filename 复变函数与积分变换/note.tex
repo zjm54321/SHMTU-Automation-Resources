@@ -1,0 +1,396 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[UTF8]{ctex}
+\usepackage{geometry}
+\usepackage[all]{xy}
+\usepackage{hyperref}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+anchorcolor=blue,
+citecolor=blue}
+
+\title{复变函数复习}
+\author{ming}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{复数}
+
+
+\subsection{基本展开公式}
+
+\subsubsection{三角式、指数式}
+
+\begin{equation}
+    \begin{aligned}
+        z &= x + iy \\
+          &= r(\cos \theta + i \sin \theta) \\
+          &= r e^{i \theta}
+    \end{aligned}
+\end{equation}
+
+\subsubsection{乘法公式}
+
+\begin{equation}
+    \begin{aligned}
+        z_1 z_2 &= r_1 r_2 [\cos(r_1+r_2) + i \sin(r_1+r_2)] \\
+                &= r_1 r_2 e^{i(r_1+r_2)}
+    \end{aligned}
+\end{equation}
+
+\subsubsection{次方公式}
+
+\begin{equation}
+    z^n = r^n e^{i n \theta} 
+\end{equation}
+
+\subsubsection{开方公式}
+
+\begin{equation}
+    \sqrt[n]{z} = \sqrt[n]{r} (\cos \frac{\theta + 2k\pi}{n} + i \sin \frac{\theta + 2k\pi}{n}) \quad (k=0,1,2,\cdots,n-1)
+\end{equation}
+
+计算步骤：
+\begin{enumerate}
+    \item 先把根号内的复数转换为三角式
+    \item $\cos$ 和 $\sin$ 部分变为 $\frac{\theta + 2k\pi}{n}$ : $k=0,1,2,\cdots,n-1$ ; $n$ 为开$n$次方
+\end{enumerate}
+
+\subsection{初等函数}
+
+\subsubsection{指数函数}
+
+\begin{equation}
+    e^z = e^x (\cos y + i \sin y) \quad (z=x+iy)
+\end{equation}
+
+\begin{equation}
+    e^{z_1+z_2} = e^{z_1} e^{z_2} , (e^{z_1})^{z_2} \neq e^{z_1 z_2} , (e^z)^n = e^{nz} \quad (n \in \mathbb{Z})
+\end{equation}
+
+\begin{equation}
+    Arg(e^z) = y + 2k\pi \quad (k \in \mathbb{Z})
+\end{equation}
+
+\begin{equation}
+    e^{iz}= \cos z + i \sin z
+\end{equation}
+
+\subsubsection{三角函数}
+
+\begin{equation}
+    \begin{aligned}
+        \sin z &= \frac{1}{2i} (e^{iz} - e^{-iz}) \\
+        \cos z &= \frac{1}{2} (e^{iz} + e^{-iz})
+    \end{aligned}
+\end{equation}
+
+\subsubsection{双曲函数}
+
+\begin{equation}
+    \begin{aligned}
+        \sinh z &= \frac{1}{2} (e^z - e^{-z}) \\
+        \cosh z &= \frac{1}{2} (e^z + e^{-z})
+    \end{aligned}
+\end{equation}
+
+\subsubsection{对数函数}
+
+\begin{equation}
+    \begin{aligned}
+        Ln z &= \ln \left\lvert z \right\rvert + i Arg z \quad (z \neq 0,\infty) \\
+             &= \ln \left\lvert z \right\rvert + i arg Z + 2k\pi i \quad (k \in \mathbb{Z})
+    \end{aligned}
+\end{equation}
+
+\subsubsection{幂函数}
+
+\begin{equation}
+    z^w = e^{w Ln z}
+\end{equation}
+
+\section{解析函数}
+
+\begin{equation}
+    f(z) = u(x,y) + iv(x,y)
+\end{equation}
+
+\subsection{C-R条件}
+
+$f(z)$ 在区域 $z$ 处可微的充分必要条件是 $u(x,y)$ 和 $v(x,y)$ 在 $z$ 处：
+
+\begin{equation} \label{CR}
+    \begin{aligned}
+        \frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y} \\
+        \frac{\partial u}{\partial y} &= -\frac{\partial v}{\partial x}
+    \end{aligned}
+\end{equation}
+
+\subsubsection{推论1}
+
+\begin{equation}
+    \begin{aligned}
+        f'(z) &= \frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x} \\
+              &= \frac{\partial v}{\partial y} + i \frac{\partial v}{\partial x} \\
+              &= \frac{\partial u}{\partial x} - i \frac{\partial u}{\partial y} \\
+              &= \frac{\partial v}{\partial y} - i \frac{\partial u}{\partial y}
+    \end{aligned}
+\end{equation}
+
+\subsection{解析}
+
+\begin{displaymath}
+    \xymatrix{
+    [f(z) \text{在} D \text{内解析}] \ar@{<=>} [r] \ar@{=>}[d] & [f(z) \text{在} D \text{内可导}] \ar@{=>}[d] \\
+    [f(z) \text{在} z_0 \text{解析}] \ar@{=>}[r] & [f(z) \text{在} z_0 \text{可导}]  
+}
+\end{displaymath}
+
+\subsection{做题步骤}
+
+判断可导性与解析性
+
+\begin{enumerate}
+    \item 写出 $u$ 和 $v$
+    \item 求出 $u_x, u_y, v_x, v_y$
+    \item 判断是否满足 C-R \eqref{CR} 条件，若满足则可导，否则不可导
+    \item 判断是否解析
+\end{enumerate}
+
+\section{复积分}
+
+\subsection{类型1：复积分公式}
+
+\begin{equation}
+    \oint  f(z) dz = \oint u dx - v dy + i \oint v dx + u dy
+\end{equation}
+
+\subsection{类型2：参数方程}
+
+\begin{enumerate}
+    \item 线段：$AB, z(t)=A+t(B-A), \quad t \in [0,1]$
+    \item 抛物线：$AB,y=x^2,z(t)=t+it^2, \quad t \in [0,1]$
+    \item 圆：$z(t)=z_0+R e^{it}, \quad t \in [0,2\pi]$
+\end{enumerate}
+
+\begin{equation}
+    \oint f(z) dz = \int_{t_1}^{t_2} f(z(t)) z'(t) dt
+\end{equation}
+
+\subsubsection{重要结论}
+
+\begin{equation}
+    \begin{aligned}
+        \oint_{|z-z_0|=r} \frac{dz}{(z-z_0)^n} &= \left\{
+            \begin{aligned}
+                &2\pi i, \quad n=1 \\
+                &0, \quad n \neq 1
+            \end{aligned}
+        \right. \\
+    \end{aligned}
+\end{equation}
+
+注意：积分值与 $z_0,r$ 均无关
+
+\subsection{类型3：柯西积分定理}
+
+若 $f(z)$ 在 $C$ 和其内部处处解析，$C$ 为 $D$ 内的任一闭曲线，则：
+
+\begin{equation}
+    \oint_C f(z) dz = 0
+\end{equation}
+
+\subsection{类型4：牛顿-莱布尼茨公式}
+
+若 $f(z)$ 在 $D$ 内部处处解析，曲线 $C$ 围成单连通区域 $D$，且起点终点在 $D$ 内，则：
+
+\begin{equation}
+    \int_{z_1}^{z_2} f(z) dz = F(z_2) - F(z_1), \quad (z_1,z_2 \in D)
+\end{equation}
+
+\subsection{类型5：柯西积分公式}
+
+\begin{equation}
+    \begin{aligned}
+        \oint_C \frac{f(z)}{z-z_0} dz &= 2\pi i f(z_0), \quad (z_0 \in D) \\
+        \oint_C \frac{f(z)}{(z-z_0)^{n+1}} dz &= \frac{2\pi i}{n!} f^{(n)}(z_0), \quad (z_0 \in D)
+    \end{aligned}
+\end{equation}
+
+\section{级数}
+
+\subsection{求收敛半径}
+
+\begin{enumerate}
+    \item 根值法：$R = \frac{1}{\varlimsup\limits_{n \to \infty} \sqrt[n]{\left\lvert c_n \right\rvert}}$ ,其中 $\varlimsup$ 代表上极限
+    \item 比值法：$R = \lim\limits_{n \to \infty} \left\lvert \frac{c_{n+1}}{c_n} \right\rvert$
+\end{enumerate}
+
+\subsection{泰勒级数}
+
+\begin{equation}
+    f(z) = \sum_{n=0}^{\infty} \frac{f^{(n)}(z_0)}{n!} (z-z_0)^n
+\end{equation}
+
+\subsubsection{常见泰勒级数}
+
+\begin{enumerate}
+    \item $e^z = \sum_{n=0}^{\infty} \frac{z^n}{n!}$
+    \item $\frac{1}{1-z} = \sum_{n=0}^{\infty} z^n, \quad \left\lvert z \right\rvert < 1$
+    \item $\sin z = \sum_{n=0}^{\infty} (-1)^n \frac{ z^{2n+1}}{(2n+1)!}$
+    \item $\cos z = \sum_{n=0}^{\infty} (-1)^n \frac{ z^{2n}}{(2n)!}$
+    \item $\ln(1+z) = \sum_{n=1}^{\infty} (-1)^{n-1} \frac{ z^n}{n}$
+\end{enumerate}
+
+\subsection{洛朗级数}
+
+\begin{equation}
+    f(z) = \sum_{n=-\infty}^{\infty} c_n (z-z_0)^n
+\end{equation}
+
+\subsection{做题步骤}
+
+\begin{enumerate}
+    \item 求奇点，以奇点到展开中心的模的大小为分界
+    \item 凑出奇点形式，增补
+    \item 分类讨论中“谁大提谁”，相当于把谁塞到分母的分母里
+    \item 从 $z_0$ 中心往外扩散，最先接触到奇点的部分先发生变化
+\end{enumerate}
+
+\section{留数}
+
+\subsection{奇点}
+
+奇点：无定义点
+\begin{enumerate}
+    \item 非孤立奇点：$f(z)$ 在 $z_0$ 处无定义，但在 $z_0$ 的某个邻域内有定义。非孤立奇点值为 $\lim\limits_{k \to \infty} z_k$
+    \item 孤立奇点：
+    \begin{enumerate}
+        \item 可去奇点：$f(z)$ 在 $z_0$ 处解析，$\lim\limits_{z \to z_0} f(z)=c_0 \neq \infty$ 
+        \item 极点：$f(z)$ 在 $z_0$ 处有限，$\lim\limits_{z \to z_0} (z-z_0)^n f(z)=c_n \neq 0$, $\lim\limits_{z \to z_0} f(z)=\infty$
+        \item 本性奇点：$f(z)$ 在 $z_0$ 处无穷，$\lim\limits_{z \to z_0} f(z)$ 不存在
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{孤立奇点判断方法}
+
+\begin{enumerate}
+    \item 
+    \begin{equation*}
+        \text{洛朗展开看负次幂项系数：}
+        \left\{
+            \begin{aligned}
+                0, &\quad z_0 \text{为可去奇点} \\
+                m, &\quad z_0 \text{为极点} \\
+                \infty, &\quad z_0 \text{为本性奇点}
+            \end{aligned}
+        \right.
+    \end{equation*}
+    \item 
+    \begin{equation*}
+        \text{看} \lim\limits_{z \to z_0} f(z) \text{：}
+        \left\{
+            \begin{aligned}
+                c_0, &\quad z_0 \text{为可去奇点} \\
+                \infty, &\quad z_0 \text{为极点} \\
+                \text{不存在}, &\quad z_0 \text{为本性奇点}
+            \end{aligned}
+        \right.
+    \end{equation*}
+    \item 
+    \begin{equation*}
+        \text{判断} m \text{阶：}
+        \left\{
+            \begin{aligned}
+                \lim\limits_{z \to z_0} (z-z_0)^m f(z) = c_m \neq 0, \quad (z_0 \neq \infty) \\
+                f(z) = \frac{(z-z_0)^m p(z)}{(z-z_0)^n q(z)}, p(z),q(z) \text{在} z_0 \text{解析}, p(z_0),q(z_0) \neq 0, \\
+                \text{则此时} z_0 \text{为} 
+                \left\{
+                    \begin{aligned}
+                        m-m, \text{阶极点}, \quad m>n \\
+                        \text{可去奇点}, \quad m \leq n
+                    \end{aligned}
+                \right. \\
+            \end{aligned}
+        \right.
+    \end{equation*}
+    \item 
+    \begin{equation*}
+        z_0\text{是} \frac{1}{f(z)} \text{的} m \text{阶零点} 
+    \end{equation*}
+\end{enumerate}
+
+\subsubsection{奇点求法}
+
+\begin{enumerate}
+    \item 先找出所有奇点
+    \item 如存在奇点点列，其极限是非孤立奇点
+    \item 孤立奇点类型
+\end{enumerate}
+
+\subsection{留数法则}
+
+洛朗级数中 $c_{-1}(z-z_0)^{-1}$ 的系数，称为 $f(z)$ 在孤立奇点 $z_0$ 处的留数，记为 $\text{Res}f(z_0)$
+
+\begin{enumerate}
+    \item 设 $z_0$ 是 $f(z)$ 的 1 阶极点，则 $\text{Res}f(z_0) = \lim\limits_{z \to z_0} (z-z_0) f(z)$
+    \item 设 $f(z)=\frac{p(z)}{q(z)}$ ，若 $z_0$ 是 $f(z)$ 的 1 阶极点，则 $\text{Res}f(z_0) = \frac{p(z_0)}{q'(z_0)}$
+    \item 设 $z_0$ 是 $f(z)$ 的 $m$ 阶极点，则 $\text{Res}f(z_0) = \frac{1}{(m-1)!} \lim\limits_{z \to z_0} \frac{d^{m-1}}{dz^{m-1}} [(z-z_0)^m f(z)]$
+    \item $\text{Res}f(\infty) = -\text{Res}[f(\frac{1}{\zeta}) \frac{1}{\zeta^2},0]=-c_{-1}, \quad z=\frac{1}{\zeta}$
+\end{enumerate}
+
+\subsection{留数基本定理}
+
+\begin{enumerate}
+    \item 若 $f(z)$ 在 $D$ 内除有限个孤立奇点外处处解析，则 $\oint_C f(z) dz = 2\pi i \sum_{k=1}^{n} \text{Res}f(z_k)$
+    \item 无穷远点的留数：$\sum_{k=1}^{n} \text{Res}f(z_k) + \text{Res}f(\infty) = 0$
+\end{enumerate}
+
+\subsection{做题步骤}
+
+\begin{enumerate}
+    \item 求出所有奇点
+    \item 判断奇点类型
+    \item 求留数
+    \item “$ 2 \pi i \times$ 留数和”求积分
+\end{enumerate}
+
+\section{拉普拉斯变换}
+
+\subsection{重要变换}
+
+\begin{enumerate}
+    \item $L\{f(t)\} = F(s)$
+    \item $L\{f'(t)\} = sF(s) - f(0)$
+    \item $L\{f''(t)\} = s^2 F(s) - sf(0) - f'(0)$
+    \item $L\{e^{at} f(t)\} = F(s-a)$
+    \item $L\{t^n f(t)\} = (-1)^n F^{(n)}(s)$
+    \item $L\{f(t) * g(t)\} = F(s)G(s)$
+\end{enumerate}
+
+\subsection{变换表}
+
+\begin{enumerate}
+    \item $L\{1\} = \frac{1}{s}$
+    \item $L\{t^n\} = \frac{n!}{s^{n+1}}$
+    \item $L\{e^{at}\} = \frac{1}{s-a}$
+    \item $L\{\sin \omega t\} = \frac{\omega}{s^2 + \omega^2}$
+    \item $L\{\cos \omega t\} = \frac{s}{s^2 + \omega^2}$
+    \item $L\{t^n e^{at}\} = \frac{n!}{(s-a)^{n+1}}$
+    \item $L\{t^n \sin \omega t\} = \frac{n! \omega}{(s^2 + \omega^2)^{n+1}}$
+    \item $L\{t^n \cos \omega t\} = \frac{n! (s^2 - \omega^2)}{(s^2 + \omega^2)^{n+1}}$
+    \item $L\{e^{at} \sin \omega t\} = \frac{\omega}{(s-a)^2 + \omega^2}$
+    \item $L\{e^{at} \cos \omega t\} = \frac{s-a}{(s-a)^2 + \omega^2}$
+    \item $L\{t^n e^{at} \sin \omega t\} = \frac{n! \omega (s-a)}{[(s-a)^2 + \omega^2]^{n+1}}$
+    \item $L\{t^n e^{at} \cos \omega t\} = \frac{n! [(s-a)^2 - \omega^2]}{[(s-a)^2 + \omega^2]^{n+1}}$
+\end{enumerate}
+
+
+\end{document}

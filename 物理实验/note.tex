@@ -1,0 +1,136 @@
+\documentclass{article}
+
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+\usepackage{geometry}
+
+\title{物理实验复习}
+\author{ming}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{绪论}
+
+\subsection{测量值、真值、误差}
+测量值：数值 单位
+
+真值：物理量客观存在的值（通常是未知的）
+
+误差：测量值与真值之间的差
+
+\subsection{误差的分类及其特点}
+
+\subsubsection{系统误差}
+
+来源：人员、仪器、方法、环境
+
+\subsubsection{偶然误差}
+
+特点：不可避免、也不可消除，单次测量具有随机性，重复测量服从统计规律
+
+特征：
+\begin{itemize}
+    \item 单峰性：绝对值小的误差出现的概率大，绝对值大的误差出现的概率小
+    \item 对称性：正误差和负误差出现的概率相等
+    \item 有界性：大量测量值都集中在真值附近，与真值差异较大的测量值出现的概率几乎为零
+    \item 抵偿性：在相同条件下对同一物理量进行多次测量，其偶然误差的算数平均值随测量次数的增加而趋向于零
+\end{itemize}
+
+
+\subsubsection{粗大误差}
+
+特点：不属于正常测量范畴，如果出现在测量结果中，则按一定规定剔除
+
+\subsubsection{精密度、准确度、精确度}
+
+\begin{itemize}
+    \item 精密度：数据集中程度，反映随机误差的大小
+    \item 准确度：平均值与真值之间的接近程度，反映系统误差的大小
+    \item 精确度：精度和准确度的综合反映
+\end{itemize}
+
+\subsection{不确定度}
+
+\begin{itemize}
+    \item A类不确定度：可以用统计方法估计的分量，通常就是测量平均值的标准偏差$u_A$
+    \item B类不确定度：用非统计方法估计的分量$u_B$
+    \item 合成不确定度：A类不确定度和B类不确定度的平方和的平方根$u_c$ 
+    \item 扩展不确定度：合成不确定度乘以一个因子$k$，$U = k u_c$
+\end{itemize}
+
+\subsubsection{直接测量量不确定度评定（公式与计算）}
+
+\begin{itemize}
+    \item A类不确定度：$u_A = \sqrt{\frac{\sum(x_i - \bar{x})^2}{n(n-1)}}$
+    \item B类不确定度：$u_B = \frac{\Delta x}{\sqrt{3}}$
+    \item 合成不确定度：$u_c = \sqrt{u_A^2 + u_B^2}$
+    \item 扩展不确定度：$U = 2 u_c$
+\end{itemize}
+
+正确结果表达式：
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        x &= \bar{x} \pm U \\
+        E &= \frac{U}{\bar{x}} \times 100\%
+    \end{aligned}
+    \right.
+\end{equation}
+
+规则：
+
+\begin{itemize}
+    \item $\bar{x}$与$U$同单位（数量级）
+    \item $\bar{x}$与$U$同指数幂（科学记数法）
+    \item $U$只保留一位数字，但计算过程中要多取一位，且$U$作为它值的代入时也保留两位
+    \item $\bar{x}$与$U$末尾对齐
+    \item $E < 10\%$时，取一位数字，$E \geq 10\%$时，取两位数字
+\end{itemize}
+
+\subsection{间接测量量不确定度度评定（公式与计算）}
+
+设间接测量量N与数个直接测量量有函数关系：
+
+\begin{equation}
+    N = f(x_1, x_2, \cdots, x_n)
+\end{equation}
+
+则：
+
+\begin{equation}
+    U_N = \sqrt{\sum_{i=1}^{n} \left(\frac{\partial f}{\partial x_i} U_i\right)^2}
+\end{equation}
+
+\begin{equation}
+    E = \frac{U_N}{\bar{N}} \times 100\%
+\end{equation}
+
+结果表达式为：
+
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        N &= \bar{N} \pm U_N \\
+        E &= \frac{U_N}{\bar{N}} \times 100\%
+    \end{aligned}
+    \right.
+\end{equation}
+
+\subsection{有效数字}
+
+\subsubsection{有效数字的运算规则}
+
+\begin{itemize}
+    \item 加减法：定末尾
+    \item 乘除法：定位数
+    \item 有效数字的取舍：4舍6入5凑偶
+    \item 乘方、开方：有效数字位数与底数有效数字位数相同
+    \item 常数：位数相同
+    \item 无理数：比结果多保留一位
+\end{itemize}
+
+\end{document}
