@@ -1,0 +1,191 @@
+\documentclass[UTF8]{ctexart}
+
+\usepackage{geometry} % 绘制公式
+\usepackage{graphicx}
+\usepackage{mathrsfs}%使用花体字母
+\usepackage{amsfonts}%使用双线体
+\usepackage{mathtools}%使用coloneqq符号
+\usepackage{amsmath}
+\usepackage{xcolor} % 适用颜色框
+\usepackage{tcolorbox}
+\usepackage{titling} % 用于调整标题的垂直间距
+
+\geometry{
+    a4paper, % 使用A4纸张
+    left=20mm, % 左侧页边距为20毫米
+    right=20mm, % 右侧页边距为20毫米
+    top=25mm, % 顶部页边距为25毫米
+    bottom=25mm % 底部页边距为25毫米
+}
+
+% 自定义环境“！”代表透明度可调节
+\tcbset{
+    blue/.style={
+        colback=blue!10!white,
+        colframe=black,
+        boxrule=1pt,
+        arc=0mm,
+        auto outer arc,
+        left=1mm,
+        right=1mm,
+        top=1mm,
+        bottom=1mm
+    }
+}
+\tcbset{
+    green/.style={
+        colback=green!10!white,
+        colframe=black,
+        boxrule=1pt,
+        arc=0mm,
+        auto outer arc,
+        left=1mm,
+        right=1mm,
+        top=1mm,
+        bottom=1mm
+    }
+}
+
+% 调整标题的垂直间距
+\setlength{\droptitle}{-60pt}
+\pretitle{\begin{center}\LARGE\bfseries\vskip -20pt}
+\posttitle{\par\vskip -10pt\rule{\textwidth}{0.4pt}\vskip -10pt\end{center}}
+\predate{\begin{center}\large\vskip -10pt}
+\postdate{\par\vskip -10pt\rule{\textwidth}{0.4pt}\vskip -20pt\end{center}}
+
+\title{自动控制原理}
+\author{章家铭}
+\date{\today}
+
+\begin{document}
+    \maketitle
+
+    \section{结构图化简}
+    
+    \begin{enumerate}
+        \item 串联等效：$C(s) = G_1(s) G_2(s) R(s)$
+        \item 并联等效：$C(s) = [G_1(s) \pm G_2(s)]R(s)$
+        \item 反馈等效: $C(s) = \frac{G(s)}{1 \mp G(s)H(s)} R(s)$
+        \item 比较点前移 $C(s) = G(s)R_1(s) \pm R_2(s) = [R_1(s) \pm \frac{R_2(s)}{G(s)}]G(s)$
+        \item 比较点后移 $C(s) = G(s)[R_1(s) \pm R_2(s)]G(s) = R_1(s)G(s) \pm R_2(s)G(s)$
+    \end{enumerate}
+    
+    \section{梅森公式}
+
+    \begin{equation*}
+        p = \frac{1}{\Delta} \sum_{k = 1}^{ n } p_k \Delta_k =G(s)
+    \end{equation*}
+
+    \begin{tcolorbox}[green]
+    \begin{enumerate}
+        \item 源节点：只有输出的节点
+        \item 阱节点：只有输入的节点
+        \item 混合节点：既有输入也有输出的节点
+        \item 前向通道：从源节点到阱节点，且每个节点仅通过一次的通道
+        \item 单回路：回路的起点和终点在同一个节点，且每个节点仅通过一次
+        \item 不接触回路：两个没有公共点的单回路
+    \end{enumerate}
+    \end{tcolorbox}
+
+    \begin{enumerate}
+        \item 找出所有的前向通道，计算出增益$p_k$（乘积）
+        \item 找出所有回路，写出增益 $L_n$  （$L_a$ 为单回路 ， $L_b L_c$ 为两两不接触回路，以此类推）
+        \item 计算特征式 $\Delta = 1 - \sum L_a + \sum L_b L_c - \sum L_d L_e L_f  ...$
+        \item 计算特征余子式 $\Delta_k$ （在$\Delta$中，去除与第$k$条前向通道接触后剩余的回路）
+    \end{enumerate}
+
+    \section{稳定性判断——劳斯判据}
+
+    \begin{tcolorbox}[green]
+    传递函数：在零初始条件下，输出的拉氏变换与输入的拉式变换的比值
+    \begin{equation*}
+        G(s) = \frac{ C(s) }{ R(s) }
+    \end{equation*}
+    分母 = 0 所得的方程为闭环特征方程。\\
+    分母 + 分子 = 0 所得的方程为开环特征方程。
+    \end{tcolorbox}
+
+    劳斯表列法：
+
+    闭环特征方程为：
+
+    $as^5 + bs^4 + cs^3 + ds^2 + es + f = 0$
+
+    则劳斯表如下：
+    \begin{equation*}
+        \begin{array}{cccc}
+            s^5 & s_{11} = a & s_{12} = c & s_{13} = e\\
+            s^4 & s_{21} = b & s_{22} = d & s_{23} = f \\
+            s^3 & s_{31} = \frac{s_{12}s_{21}-s_{11}s_{22}}{s_{21}} & s_{32} = \frac{s_{13}s_{21}-s_{11}s_{23}}{s_{21}} \\
+            s^2 & s_{41} = \frac{s_{22}s_{31}-s_{21}s_{32}}{s_{31}} & s_{42} = f \\
+            s^1 & s_{51} = \frac{s_{32}s_{41}-s_{31}s_{42}}{s_{41}} \\
+            s^0 & s_{61} = s_{42}
+        \end{array}
+    \end{equation*}
+
+    稳定的充要条件为第一列，即$s_{11},s_{21} \cdots s_{61}$均为正,同时，第一列符号改变的次数就是有正实部根的个数。
+
+    其中，当第一列出现0时，则使用无穷小$\varepsilon$来代替。
+
+    若出现一行全为0，则对上一行进行求导，构造辅助方程。
+
+    \section{性能指标}
+    \begin{enumerate}
+        \item 上升时间$t_t$：指系统输出响应重稳态10\%上升到90\%所用的时间（无震荡）或第一次到稳态的时间（震荡）
+        \item 峰值时间$t_p$：指系统输出响应超过稳态值到达第一个峰值所需的时间
+        \item 超调量$\sigma \%$：指系统输出响应超出稳态值的最大偏移量占稳态值的百分比 $\sigma \% = \frac{c(t_p)-c(\infty)}{c(\infty)} \times 100 \%$
+        \item 调节时间$t_s$：指系统输出响应进入稳态值的 $ \pm 5 \% or \pm 2 \%$ 的误差带时所需的时间。
+    \end{enumerate}
+
+    一阶系统：
+    \begin{enumerate}
+        \item 开环传递函数：$G(s) = \frac{1}{Ts}$
+        \item 闭环传递函数：$\Phi(s) = \frac{1}{Ts+1}$
+    \end{enumerate}
+    
+    单位负反馈：
+    \begin{enumerate}
+        \item 闭环传递函数的分子 = 开环传递函数的分子
+        \item 闭环传递函数的分母 = 开环传递函数的分子 + 分母
+    \end{enumerate}
+
+    典型无零点二阶系统的开环传递函数 $G(s) = \frac{\omega_n^2}{s(s+2\varepsilon\omega_n)} = \frac{k}{s(Ts+1)} $
+
+    \begin{equation*}
+        \begin{aligned}
+        k &= \frac{\omega_n}{2\varepsilon}\\
+        T &= \frac{1}{2\varepsilon\omega_n}
+        \end{aligned}
+    \end{equation*}
+
+    稳态误差:
+    \begin{equation*}
+        e_{ss} = \lim_{t \to \infty} e(t) = \lim_{t \to \infty}[c^\ast  (t) -c(t)]
+    \end{equation*}
+
+    \section{根轨迹}
+
+    \begin{tcolorbox}[green]
+        开环传递函数：分子为0的点为零点$z_i$(数量为m)，分母为0的点为极点$p_i$(数量为n)。
+    \end{tcolorbox}
+    \begin{enumerate}
+        \item 起点和终点：起于开环极点$\times$，终于开环零点$\circ$
+        \item 分支数，连续性，对称性：分支数为m,n中大的，根轨迹具有连续性且关于实轴对称。
+        \item 分布：若某区域右侧的 n+m 个数为奇数，则该区域是根轨迹
+        \item 渐近线：夹角$\phi_a = \frac{(2k+1)\pi}{n-m} , k= 0,1,2,\cdots , n-m-1$ ，交点 $\sigma_a = \frac{\sum p_i \sum z_i}{n-m}$
+        \item 分离（会合）点d：$\sum \frac{1}{d-z_i} = \sum \frac{1}{d-p_i}$
+        \item 与虚轴交点： 令$s=j\omega$ ，令特征方程实部和虚部分别为0，求解$\omega$
+    \end{enumerate}
+
+    \section{串联超前校正}
+
+    \begin{enumerate}
+        \item 根据误差函数，求出误差系数$K$
+        \item 画出伯德图
+        \item 根据图求出$\omega_c$，并求出校正前相位裕度
+        \item 根据$\omega_c^\prime$，求出a,T，并以此写出校正装置
+        \item 写出校正后传递函数$G = G_0 \cdot G_c$
+        \item 验证相位裕度是否满足要求
+    \end{enumerate}
+
+\end{document}
