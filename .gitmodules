@@ -7,3 +7,6 @@
 [submodule "单片机及接口技术"]
 	path = 单片机及接口技术
 	url = https://github.com/zjm54321/Lesson-WG310750.git
+[submodule "人工智能与工程实践"]
+	path = 人工智能与工程实践
+	url = https://github.com/zjm54321/Lesson-WG320950.git
