@@ -1,3 +1,9 @@
 [submodule "C#程序设计及应用"]
 	path = "C#程序设计及应用"
 	url = https://github.com/zjm54321/Lesson-WG320960.git
+[submodule "单片机及接口技术课程设计"]
+	path = 单片机及接口技术课程设计
+	url = https://github.com/zjm54321/Lesson-WG327440.git
+[submodule "单片机及接口技术"]
+	path = 单片机及接口技术
+	url = https://github.com/zjm54321/Lesson-WG310750.git
