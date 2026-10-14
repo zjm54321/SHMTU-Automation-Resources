@@ -1,12 +1,69 @@
+[submodule "Lesson-WG310310"]
+	path = "Lesson-WG310310"
+	url = "../Lesson-WG310310.git"
+[submodule "Lesson-WG310400s"]
+	path = "Lesson-WG310400s"
+	url = "../Lesson-WG310400s.git"
+[submodule "Lesson-WG310430"]
+	path = "Lesson-WG310430"
+	url = "../Lesson-WG310430.git"
+[submodule "Lesson-WG310500"]
+	path = "Lesson-WG310500"
+	url = "../Lesson-WG310500.git"
+[submodule "Lesson-WG310590"]
+	path = "Lesson-WG310590"
+	url = "../Lesson-WG310590.git"
+[submodule "Lesson-WG310620"]
+	path = "Lesson-WG310620"
+	url = "../Lesson-WG310620.git"
+[submodule "Lesson-WG310680"]
+	path = "Lesson-WG310680"
+	url = "../Lesson-WG310680.git"
+[submodule "单片机及接口技术"]
+	path = "单片机及接口技术"
+	url = "https://github.com/SMU-RES/Lesson-WG310750.git"
+[submodule "Lesson-WG320380"]
+	path = "Lesson-WG320380"
+	url = "../Lesson-WG320380.git"
+[submodule "Lesson-WG320880"]
+	path = "Lesson-WG320880"
+	url = "../Lesson-WG320880.git"
+[submodule "人工智能与工程实践"]
+	path = "人工智能与工程实践"
+	url = "https://github.com/SMU-RES/Lesson-WG320950.git"
 [submodule "C#程序设计及应用"]
 	path = "C#程序设计及应用"
-	url = https://github.com/SMU-RES/Lesson-WG320960.git
+	url = "https://github.com/SMU-RES/Lesson-WG320960.git"
+[submodule "Lesson-WG327030"]
+	path = "Lesson-WG327030"
+	url = "../Lesson-WG327030.git"
+[submodule "Lesson-WG327050"]
+	path = "Lesson-WG327050"
+	url = "../Lesson-WG327050.git"
+[submodule "Lesson-WG327070"]
+	path = "Lesson-WG327070"
+	url = "../Lesson-WG327070.git"
+[submodule "Lesson-WG327420"]
+	path = "Lesson-WG327420"
+	url = "../Lesson-WG327420.git"
+[submodule "Lesson-WG327430"]
+	path = "Lesson-WG327430"
+	url = "../Lesson-WG327430.git"
 [submodule "单片机及接口技术课程设计"]
-	path = 单片机及接口技术课程设计
-	url = https://github.com/SMU-RES/Lesson-WG327440.git
-[submodule "单片机及接口技术"]
-	path = 单片机及接口技术
-	url = https://github.com/SMU-RES/Lesson-WG310750.git
-[submodule "人工智能与工程实践"]
-	path = 人工智能与工程实践
-	url = https://github.com/SMU-RES/Lesson-WG320950.git
+	path = "单片机及接口技术课程设计"
+	url = "https://github.com/SMU-RES/Lesson-WG327440.git"
+[submodule "Lesson-WG327490"]
+	path = "Lesson-WG327490"
+	url = "../Lesson-WG327490.git"
+[submodule "Lesson-WL210130"]
+	path = "Lesson-WL210130"
+	url = "../Lesson-WL210130.git"
+[submodule "Lesson-WL310012"]
+	path = "Lesson-WL310012"
+	url = "../Lesson-WL310012.git"
+[submodule "Lesson-WL320040"]
+	path = "Lesson-WL320040"
+	url = "../Lesson-WL320040.git"
+[submodule "Lesson-XX310070"]
+	path = "Lesson-XX310070"
+	url = "../Lesson-XX310070.git"
