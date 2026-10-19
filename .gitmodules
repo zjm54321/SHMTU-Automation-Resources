@@ -1,32 +1,32 @@
 [submodule "Lesson-WG310310"]
-	path = "Lesson-WG310310"
+	path = 计算机控制系统
 	url = "../Lesson-WG310310.git"
 [submodule "Lesson-WG310400s"]
-	path = "Lesson-WG310400s"
+	path = 模拟电子技术实验
 	url = "../Lesson-WG310400s.git"
 [submodule "Lesson-WG310430"]
-	path = "Lesson-WG310430"
+	path = 微机原理及接口技术
 	url = "../Lesson-WG310430.git"
 [submodule "Lesson-WG310500"]
-	path = "Lesson-WG310500"
+	path = 信号分析与处理
 	url = "../Lesson-WG310500.git"
 [submodule "Lesson-WG310590"]
-	path = "Lesson-WG310590"
+	path = 自动控制原理
 	url = "../Lesson-WG310590.git"
 [submodule "Lesson-WG310620"]
-	path = "Lesson-WG310620"
+	path = 数字图像处理基础
 	url = "../Lesson-WG310620.git"
 [submodule "Lesson-WG310680"]
-	path = "Lesson-WG310680"
+	path = 模拟电子技术
 	url = "../Lesson-WG310680.git"
 [submodule "单片机及接口技术"]
 	path = "单片机及接口技术"
 	url = "https://github.com/SMU-RES/Lesson-WG310750.git"
 [submodule "Lesson-WG320380"]
-	path = "Lesson-WG320380"
+	path = 控制系统仿真与CAD
 	url = "../Lesson-WG320380.git"
 [submodule "Lesson-WG320880"]
-	path = "Lesson-WG320880"
+	path = 数据库应用技术
 	url = "../Lesson-WG320880.git"
 [submodule "人工智能与工程实践"]
 	path = "人工智能与工程实践"
@@ -35,35 +35,41 @@
 	path = "C#程序设计及应用"
 	url = "https://github.com/SMU-RES/Lesson-WG320960.git"
 [submodule "Lesson-WG327030"]
-	path = "Lesson-WG327030"
+	path = 印刷电路设计与制作
 	url = "../Lesson-WG327030.git"
 [submodule "Lesson-WG327050"]
-	path = "Lesson-WG327050"
+	path = 微机原理及接口技术课程设计
 	url = "../Lesson-WG327050.git"
 [submodule "Lesson-WG327070"]
-	path = "Lesson-WG327070"
+	path = 控制系统仿真与CAD课程设计
 	url = "../Lesson-WG327070.git"
 [submodule "Lesson-WG327420"]
-	path = "Lesson-WG327420"
+	path = 自动控制系统综合实践
 	url = "../Lesson-WG327420.git"
 [submodule "Lesson-WG327430"]
-	path = "Lesson-WG327430"
-	url = "../Lesson-WG327430.git"
+	path = 工业自动化先进技术综合实践
+	url = https://github.com/SMU-RES/Lesson-WG327430.git
 [submodule "单片机及接口技术课程设计"]
 	path = "单片机及接口技术课程设计"
 	url = "https://github.com/SMU-RES/Lesson-WG327440.git"
 [submodule "Lesson-WG327490"]
-	path = "Lesson-WG327490"
+	path = 工业可编程控制器综合实践
 	url = "../Lesson-WG327490.git"
 [submodule "Lesson-WL210130"]
-	path = "Lesson-WL210130"
+	path = 复变函数与积分变换
 	url = "../Lesson-WL210130.git"
 [submodule "Lesson-WL310012"]
-	path = "Lesson-WL310012"
+	path = 大学物理(二)
 	url = "../Lesson-WL310012.git"
 [submodule "Lesson-WL320040"]
-	path = "Lesson-WL320040"
+	path = 物理实验
 	url = "../Lesson-WL320040.git"
 [submodule "Lesson-XX310070"]
-	path = "Lesson-XX310070"
+	path = C语言程序设计
 	url = "../Lesson-XX310070.git"
+[submodule "Lesson-WG327060"]
+	path = 企业实习
+	url = https://github.com/SMU-RES/Lesson-WG327060.git
+[submodule "Lesson-QT796001"]
+	path = 小型智能交通装置的制作和控制基础
+	url = https://github.com/SMU-RES/Lesson-QT796001.git
