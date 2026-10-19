@@ -24,7 +24,7 @@
 	url = "https://github.com/SMU-RES/Lesson-WG310750.git"
 [submodule "Lesson-WG320380"]
 	path = 控制系统仿真与CAD
-	url = "../Lesson-WG320380.git"
+	url = https://github.com/SMU-RES/Lesson-WG320380.git
 [submodule "Lesson-WG320880"]
 	path = 数据库应用技术
 	url = "../Lesson-WG320880.git"
@@ -42,10 +42,10 @@
 	url = "../Lesson-WG327050.git"
 [submodule "Lesson-WG327070"]
 	path = 控制系统仿真与CAD课程设计
-	url = "../Lesson-WG327070.git"
+	url = https://github.com/SMU-RES/Lesson-WG327070.git
 [submodule "Lesson-WG327420"]
 	path = 自动控制系统综合实践
-	url = "../Lesson-WG327420.git"
+	url = https://github.com/SMU-RES/Lesson-WG327420.git
 [submodule "Lesson-WG327430"]
 	path = 工业自动化先进技术综合实践
 	url = https://github.com/SMU-RES/Lesson-WG327430.git
@@ -73,3 +73,6 @@
 [submodule "Lesson-QT796001"]
 	path = 小型智能交通装置的制作和控制基础
 	url = https://github.com/SMU-RES/Lesson-QT796001.git
+[submodule "Lesson-WG310550"]
+	path = 自动化仪表与过程控制
+	url = https://github.com/SMU-RES/Lesson-WG310550.git
