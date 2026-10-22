@@ -1,6 +1,6 @@
 [submodule "Lesson-WG310310"]
 	path = 计算机控制系统
-	url = "../Lesson-WG310310.git"
+	url = https://github.com/SMU-RES/Lesson-WG310310.git
 [submodule "Lesson-WG310400s"]
 	path = 模拟电子技术实验
 	url = "../Lesson-WG310400s.git"
@@ -33,7 +33,7 @@
 	url = "https://github.com/SMU-RES/Lesson-WG320950.git"
 [submodule "C#程序设计及应用"]
 	path = "C#程序设计及应用"
-	url = "https://github.com/SMU-RES/Lesson-WG320960.git"
+	url = https://github.com/SMU-RES/Lesson-WG320960.git
 [submodule "Lesson-WG327030"]
 	path = 印刷电路设计与制作
 	url = "../Lesson-WG327030.git"
@@ -54,7 +54,7 @@
 	url = "https://github.com/SMU-RES/Lesson-WG327440.git"
 [submodule "Lesson-WG327490"]
 	path = 工业可编程控制器综合实践
-	url = "../Lesson-WG327490.git"
+	url = https://github.com/SMU-RES/Lesson-WG327490.git
 [submodule "Lesson-WL210130"]
 	path = 复变函数与积分变换
 	url = "../Lesson-WL210130.git"
@@ -76,3 +76,9 @@
 [submodule "Lesson-WG310550"]
 	path = 自动化仪表与过程控制
 	url = https://github.com/SMU-RES/Lesson-WG310550.git
+[submodule "自动化专业实习"]
+	path = 自动化专业实习
+	url = https://github.com/SMU-RES/Lesson-WG327020.git
+[submodule "深度学习理论与应用实践"]
+	path = 深度学习理论与应用实践
+	url = https://github.com/SMU-RES/Lesson-WG320940.git
